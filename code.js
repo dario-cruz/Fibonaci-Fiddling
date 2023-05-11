@@ -1,10 +1,18 @@
-// Create the Fibonacci Sequence with takes a given number and adds all numbers from 1 to that number together. 
+// Create the Fibonacci Sequence with takes a given givenNumber and adds all givenNumbers from 1 to that givenNumber together. 
 
-const iterationFib = () => {
-
+const iterationFib = (givenNumber) => {
+    let currentNum = 0
+    do {
+        currentNum += currentNum + 1
+        console.log(currentNum)
+    } while (currentNum < givenNumber)
 }
 
 
-const recursionFib = () => {
-    
+const recursionFib = (givenNumber) => {
+    if (givenNumber == 0) {
+        return givenNumber
+    } else {
+        return recursionFib(givenNumber) + givenNumber++
+    }
 }
