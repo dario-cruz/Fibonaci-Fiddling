@@ -58,3 +58,30 @@ const recursionFib = (givenNumber) => {
 //     mergesort(array, mid+1, right)
 //     merge(array, left, mid, right)
 // step 4: Stop
+
+const mergeArray = (leftArray, rightArray) => {
+    // Create array for sortation. 
+    let combinedArr = []
+
+    while (leftArray.length && rightArray.length) {
+        // Insert the smallest item into the combined Array.
+        if (leftArray[0] < rightArray[0]) {
+            combinedArr.push(leftArray.shift())
+        } else {
+            combinedArr.push(rightArray.shift())
+        }
+    }
+    return [...combinedArr, ...leftArray, ...rightArray]
+}
+
+const mergeSort = (givenArray) => {
+    if (givenArray.length <= 1) return givenArray
+    // Find the mid point of the givenArray and store is as a variable.
+    let midPoint = Math.floor(givenArray.length / 2)
+
+    let leftSide = mergeSort(givenArray.slice(0, midPoint))
+    let rightSide = mergeSort(givenArray.slice(midPoint))
+
+    // Call the mergeArray function to combine and sort the leftSide and rightSide.
+    return mergeArray(leftSide, rightSide)
+}
