@@ -1,5 +1,11 @@
 // Create the Fibonacci Sequence with takes a given givenNumber and adds all givenNumbers from 1 to that givenNumber together. 
 
+// Using this numbering, the Fibonacci sequence can be defined by the following three equations:
+// F0 = 0 (applies only to the first integer)
+// F1 = 1 (applies only to the second integer)
+// Fn = Fn-1 + Fn-2 (applies to all other integers)
+
+
 const iterationFib = (givenNumber) => {
     let numA = 0, numB = 1, nextNum
     // Console.log the first number in the Fibonacci Sequence.
