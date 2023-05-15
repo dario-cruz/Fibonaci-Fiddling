@@ -45,3 +45,7 @@ const recursionFib = (givenNumber) => {
         return fibArray
     }
 }
+
+
+// Create a function that carries out the mergesort algorithm.
+
